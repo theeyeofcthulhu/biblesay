@@ -60,10 +60,12 @@ if __name__ == '__main__':
             longest_line = len(verse[i])
 
     # Print the top speech bubble line
-    print('/', end='');
+    print(' ', end='');
     for i in range(longest_line + 2): 
-        print('‾', end='');
-    print('\\', end='\n');
+        print('_', end='');
+    print(' ', end='\n');
+    print('/', end='');
+    print((longest_line + 2) * ' ' + '\\', end='\n');
 
     # Print the lines with vertical lines
     for i in range(len(verse)):
