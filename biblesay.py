@@ -3,7 +3,8 @@
 import random
 import textwrap
 
-ascii_dove = """                                                                      
+ascii_dove = """
+            \                                                                                           
              \                                                                          
               \                                                                         
                \                                                    O,                  
