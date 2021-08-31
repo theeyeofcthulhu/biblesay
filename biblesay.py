@@ -13,27 +13,27 @@ ascii_dove = """
                    \                 O                            ;,    :,              
                     \                'loo                         ;c     ,c             
                      \               ;d  olo                     c;       ,;            
-                      \              l;0   Oold                 l;        'd            
-                       \             O;       dl               d;          c            
-                        \             :l       0lo            d:           :            
+                      \              l;0   ;ol;                 l;        'd            
+                       \              ;       dl               d;          c            
+                        \             :l        lo            d:           :            
                          \            o:          d          d:            c            
                           \           d:           d        lc             l            
-                           \           c            O     0co             ,d            
-                            \         Oc            O0    c               ;             
+                           \           c            O      co             ,d            
+                            \         Oc            O0    c;              ;             
                              \        0l             d  oo               :o             
                               \      ;o             0 l;                 ;              
-                                  ;000             Ool                  :;              
-                                0O   OO o ,     0 dd0                  c,               
-                               OO -O-    0OOO:-/ O                    lO                
-                             <do;   ,0_                            ,dd                  
-                                O   0  ;0                       ;00                     
-                                 0 O'    dO                   0m                        
-                                  0;       d                    -0000O0M^;              
-                                             d 0;                        l              
-                                              0  ;;0                    o               
-                                                    ;00OO;,,0000l;     d                
-                                                                  l0; d                 
-                                                                    '0                  
+                                 ,;oo;             Ool                  :;              
+                                ;O 0  O;o,        dd0                  c,               
+                               ,o        'OlO:-/-Oq                   lO                
+                              <:dc,.,q,s                           ,dd                  
+                                       ;0,                      ;00                     
+                                         dO,                  0m       /t;              
+                                          ;d,                   -doodc;  ;              
+                                            .d.                          l              
+                                              'io;                      o:              
+                                                 'z:;0dOO;,,;hd0l;     d.               
+                                                                  l0; d;                
+                                                                    '0,                 
                                                                           """
 
 if __name__ == '__main__':
