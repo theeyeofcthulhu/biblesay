@@ -3,8 +3,7 @@
 import random
 import textwrap
 
-ascii_dove = """
-            \                                                                                           
+ascii_dove = """            \                                                                                           
              \                                                                          
               \                                                                         
                \                                                    O,                  
@@ -26,7 +25,7 @@ ascii_dove = """
                                  ,;oo;             Ool                  :;              
                                 ;O 0  O;o,        dd0                  c,               
                                ,o        'OlO:-/-Oq                   lO                
-                              <:dc,.,q,s                           ,dd                  
+                              <:dc,x,q,s                           ,dd                  
                                        ;0,                      ;00                     
                                          dO,                  0m       /t;              
                                           ;d,                   -doodc;  ;              
@@ -47,7 +46,7 @@ if __name__ == '__main__':
     verses = verses_file.readlines();
 
     # Choose a verse
-    verse = verses[random.randint(0, len(verses) - 1)]
+    verse = random.choice(verses)
 
     # Wrap the text
     verse = textwrap.wrap(verse, width=50)
@@ -57,30 +56,22 @@ if __name__ == '__main__':
 
     # Get the longest line
     for i in range(len(verse)):
-        if len(verse[i]) > longest_line:
-            longest_line = len(verse[i])
+        longest_line = len(verse[i]) if len(verse[i]) > longest_line else longest_line
 
     # Print the top speech bubble line
-    print(' ', end='');
-    for i in range(longest_line + 2): 
-        print('_', end='');
-    print(' ', end='\n');
-    print('/', end='');
-    print((longest_line + 2) * ' ' + '\\', end='\n');
+    print(' ' + (longest_line + 2) * '_' + ' ');
+    print('/' + (longest_line + 2) * ' ' + '\\');
 
-    # Print the lines with vertical lines
+    # Print the lines with vertical lines on the side for speech bubbles
     for i in range(len(verse)):
+        # Add empty spaces to 'verse' until 'longest_line'
         for j in range(len(verse[i]), longest_line + 1):
             verse[i] += ' '
-        verse[i] += '|'
-        verse[i] = '| ' + verse[i]
+        verse[i] = '| ' + verse[i] + '|'
         print(verse[i])
 
     # Print the bottom speech bubble line
-    print('\\', end='');
-    for i in range(longest_line + 2): 
-        print('_', end='');
-    print('/', end='');
+    print('\\' + (longest_line + 2) * '_' + '/');
 
     # Print the dove
     print(ascii_dove)
