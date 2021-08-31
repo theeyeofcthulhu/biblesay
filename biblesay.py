@@ -2,6 +2,7 @@
 
 import random
 import textwrap
+from optparse import OptionParser
 
 ascii_dove = """            \                                                                                           
              \                                                                          
@@ -37,6 +38,10 @@ ascii_dove = """            \
                                                                           """
 
 if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option('-n', '--no-dove', help='Don\'t display a dove', action="store_true", dest="nodove")
+    (options, args) = parser.parse_args()
+
     # Read verse file
     try:
         verses_file = open("verses.txt")
@@ -73,5 +78,6 @@ if __name__ == '__main__':
     # Print the bottom speech bubble line
     print('\\' + (longest_line + 2) * '_' + '/');
 
-    # Print the dove
-    print(ascii_dove)
+    if not options.nodove:
+        # Print the dove
+        print(ascii_dove)
