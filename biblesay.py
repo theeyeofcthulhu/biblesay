@@ -8,33 +8,33 @@ ascii_dove = """            \
              \                                                                          
               \                                                                         
                \                                                    O,                  
-                \                                                   o.'                 
-                 \                                                 0, l,                
+                \                                                   o;'                 
+                 \                                                 ,j l,                
                   \                                                l,  o'               
-                   \                 O                            ;,    :,              
+                   \                 d,                           ;,    v,              
                     \                'loo                         ;c     ,c             
                      \               ;d  olo                     c;       ,;            
-                      \              l;0   ;ol;                 l;        'd            
-                       \              ;       dl               d;          c            
-                        \             :l        lo            d:           :            
-                         \            o:          d          d:            c            
-                          \           d:           d        lc             l            
-                           \           c            O      co             ,d            
-                            \         Oc            O0    c;              ;             
-                             \        0l             d  oo               :o             
-                              \      ;o             0 l;                 ;              
-                                 ,;oo;             Ool                  :;              
-                                ;O 0  O;o,        dd0                  c,               
-                               ,o        'OlO:-/-Oq                   lO                
-                              <:dc,x,q,s                           ,dd                  
-                                       ;0,                      ;00                     
-                                         dO,                  0m       /t;              
-                                          ;d,                   -doodc;  ;              
-                                            .d.                          l              
-                                              'io;                      o:              
-                                                 'z:;0dOO;,,;hd0l;     d.               
-                                                                  l0; d;                
-                                                                    '0,                 
+                      \               lc   ;ol;                 l;        'd            
+                       \              ;,      dl               d;          c,           
+                        \             :l        lo            d:           g;           
+                         \            o:         ;d          d:            c,           
+                          \           d:          ;d        lc             l            
+                           \          ;c           ;O      co             ,d            
+                            \         Oc            O,    c;              ;:            
+                             \        0l            ;d  ,O;              :o             
+                              \      ;o             0:,;o                c;             
+                                 ,;oo;             Oolp                 :;              
+                                ;O 0  O;o,        dd;                  c,               
+                               ,o        'OlO:ideO;'                  lO                
+                              <:dc,e,qo,                           ,dd                  
+                                       '0,                      ;00                     
+                                         dO,                  0m       ,t;              
+                                          'd,                  'tdoodc;' ;              
+                                            'd.                          l              
+                                              'io;,                     o:              
+                                                 'z:;0dOi;i,;hd0l;,    d;               
+                                                                  l0;,d;                
+                                                                    'n'                 
                                                                           """
 
 if __name__ == '__main__':
