@@ -39,14 +39,15 @@ ascii_dove = """            \
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option('-n', '--no-dove', help='Don\'t display a dove', action="store_true", dest="nodove")
+    parser.add_option('-d', '--no-dove', help='Don\'t display a dove', action='store_true', dest='nodove')
+    parser.add_option('-s', '--no-speech-bubbles', help='Don\'t display a speech bubble', action='store_true', dest='nospeechbubbles')
     (options, args) = parser.parse_args()
 
     # Read verse file
     try:
-        verses_file = open("verses.txt")
+        verses_file = open('verses.txt')
     except FileNotFoundError:
-        verses_file = open("/usr/share/biblesay/verses.txt")
+        verses_file = open('/usr/share/biblesay/verses.txt')
 
     verses = verses_file.readlines();
 
@@ -63,20 +64,23 @@ if __name__ == '__main__':
     for i in range(len(verse)):
         longest_line = len(verse[i]) if len(verse[i]) > longest_line else longest_line
 
-    # Print the top speech bubble line
-    print(' ' + (longest_line + 2) * '_' + ' ');
-    print('/' + (longest_line + 2) * ' ' + '\\');
+    if not options.nospeechbubbles:
+        # Print the top speech bubble line
+        print(' ' + (longest_line + 2) * '_' + ' ');
+        print('/' + (longest_line + 2) * ' ' + '\\');
 
     # Print the lines with vertical lines on the side for speech bubbles
     for i in range(len(verse)):
         # Add empty spaces to 'verse' until 'longest_line'
         for j in range(len(verse[i]), longest_line + 1):
             verse[i] += ' '
-        verse[i] = '| ' + verse[i] + '|'
+        if not options.nospeechbubbles:
+            verse[i] = '| ' + verse[i] + '|'
         print(verse[i])
 
     # Print the bottom speech bubble line
-    print('\\' + (longest_line + 2) * '_' + '/');
+    if not options.nospeechbubbles:
+        print('\\' + (longest_line + 2) * '_' + '/');
 
     if not options.nodove:
         # Print the dove
