@@ -39,15 +39,19 @@ ascii_dove = """            \
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option('-d', '--no-dove', help='Don\'t display a dove', action='store_true', dest='nodove')
-    parser.add_option('-s', '--no-speech-bubbles', help='Don\'t display a speech bubble', action='store_true', dest='nospeechbubbles')
+    parser.add_option('-d', '--no-dove', help='do not display a dove', action='store_true', dest='nodove')
+    parser.add_option('-s', '--no-speech-bubble', help='do not display a speech bubble', action='store_true', dest='nospeechbubbles')
+    parser.add_option('-f', '--file', dest='file', help='load verses from a specific FILE', metavar='FILE')
     (options, args) = parser.parse_args()
 
     # Read verse file
-    try:
-        verses_file = open('verses.txt')
-    except FileNotFoundError:
-        verses_file = open('/usr/share/biblesay/verses.txt')
+    if not options.file:
+        try:
+            verses_file = open('verses.txt')
+        except FileNotFoundError:
+            verses_file = open('/usr/share/biblesay/verses.txt')
+    else:
+        verses_file = open(options.file)
 
     verses = verses_file.readlines();
 
