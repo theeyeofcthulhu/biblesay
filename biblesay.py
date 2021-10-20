@@ -8,15 +8,15 @@ ascii_dove = """            \
              \                                                                          
               \                                                                         
                \                                                    O,                  
-                \                                                   o;'                 
+                \                                                   o;,                 
                  \                                                 ,j l,                
-                  \                                                l,  o'               
+                  \                                                l,  o;               
                    \                 d,                           ;,    v,              
-                    \                'loo                         ;c     ,c             
-                     \               ;d  olo                     c;       ,;            
-                      \               lc   ;ol;                 l;        'd            
-                       \              ;,      dl               d;          c,           
-                        \             :l        lo            d:           g;           
+                    \                ;loo,                        ;c     ,c             
+                     \               'd  olo,                    c;       :;            
+                      \               lc   'ol;                 l;        'd            
+                       \              ;,      dl,              d;          c,           
+                        \             :l       'lo,           d:           g;           
                          \            o:         ;d          d:            c,           
                           \           d:          ;d        lc             l            
                            \          ;c           ;O      co             ,d            
@@ -24,7 +24,7 @@ ascii_dove = """            \
                              \        0l            ;d  ,O;              :o             
                               \      ;o             0:,;o                c;             
                                  ,;oo;             Oolp                 :;              
-                                ;O 0  O;o,        dd;                  c,               
+                                ;O 0  O;o,       ,dd;                  c;               
                                ,o        'OlO:ideO;'                  lO                
                               <:dc,e,qo,                           ,dd                  
                                        '0,                      ;00                     
@@ -32,7 +32,7 @@ ascii_dove = """            \
                                           'd,                  'tdoodc;' ;              
                                             'd.                          l              
                                               'io;,                     o:              
-                                                 'z:;0dOi;i,;hd0l;,    d;               
+                                                 'z:;idri;ip;hd0l;,    d;               
                                                                   l0;,d;                
                                                                     'n'                 
                                                                           """
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     else:
         verses_file = open(options.file)
 
-    verses = verses_file.readlines();
+    verses_file.close()
 
     # Choose a verse
     verse = random.choice(verses)
@@ -76,9 +76,9 @@ if __name__ == '__main__':
     # Print the lines with vertical lines on the side for speech bubbles
     for i in range(len(verse)):
         # Add empty spaces to 'verse' until 'longest_line'
-        for j in range(len(verse[i]), longest_line + 1):
-            verse[i] += ' '
         if not options.nospeechbubbles:
+            for j in range(len(verse[i]), longest_line + 1):
+                verse[i] += ' '
             verse[i] = '| ' + verse[i] + '|'
         print(verse[i])
 
