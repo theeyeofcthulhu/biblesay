@@ -53,11 +53,11 @@ if __name__ == '__main__':
     else:
         verses_file = open(options.file)
 
+    verses = verses_file.readlines()
     verses_file.close()
 
     # Choose a verse
     verse = random.choice(verses)
-
     # Wrap the text
     verse = textwrap.wrap(verse, width=50)
 
