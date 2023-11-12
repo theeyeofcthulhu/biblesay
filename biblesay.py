@@ -37,9 +37,36 @@ ascii_dove = """            \
                                                                     'n'                 
                                                                           """
 
+smaller_ascii_dove = """                   \                                                                                           
+                    \                                                                          
+                     \                                                                  
+                      \                                  O,                  
+                       \                                 o;,                 
+                        \                               ,j l,                
+                         \                              l,  o;               
+                          \          d,                ;,    v,              
+                           \         ;loo,           ;c      c;            
+                            \        'd  olo,       c;       :;            
+                             \        lc   'ol;    l;        'd            
+                              \      ;o      :o;  c'          d;
+                                 ,;oo;        olp'            h;              
+                                ;O 0  O;o,   ,dd;             'c               
+                               ,o        'OlO;'               O'               
+                              <:dc,e,qo,                    ,dd                  
+                                       '0,                  ;00                     
+                                         dO,                  0m    ,t;              
+                                          'd,on,               'tdo;' ;              
+                                             ''oomdiir;oi;,,          l              
+                                                         ''mhoml.    o:              
+                                                               'l;,_#:              
+                                                                  'o'           
+                                                                          """
+
 if __name__ == '__main__':
     parser = OptionParser()
     parser.add_option('-d', '--no-dove', help='do not display a dove', action='store_true', dest='nodove')
+    parser.add_option('-l', '--smaller-dove', help='display a smaller dove', action='store_true', dest='smaller_dove')
+    parser.add_option('-u', '--unicode-dove', help='display only a unicode \'🕊 \'', action='store_true', dest='unicode_dove')
     parser.add_option('-s', '--no-speech-bubble', help='do not display a speech bubble', action='store_true', dest='nospeechbubbles')
     parser.add_option('-f', '--file', dest='file', help='load verses from a specific FILE', metavar='FILE')
     (options, args) = parser.parse_args()
@@ -87,5 +114,11 @@ if __name__ == '__main__':
         print('\\' + (longest_line + 2) * '_' + '/');
 
     if not options.nodove:
-        # Print the dove
-        print(ascii_dove)
+        if options.smaller_dove:
+            print(smaller_ascii_dove)
+        elif options.unicode_dove:
+            print('\t\\')
+            print('\t 🕊')
+        else:
+            # Print the dove
+            print(ascii_dove)
